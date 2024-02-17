@@ -2,6 +2,7 @@ package kass.concurrente;
 
 import kass.concurrente.constants.Constante;
 import kass.concurrente.crypto.Cifrar;
+import kass.concurrente.crypto.Descifrar;
 
 /**
  * Clase Principal
@@ -15,9 +16,14 @@ public class Main {
         Long total = fin-inicio;
         System.out.println("TIEMPO TOTAL: " + nanoSegundoASegundo(total));
         System.out.println("Practica 2");
+        Descifrar.descifrarSecuential(1, 4);
     }
 
     public static double nanoSegundoASegundo(Long tiempo){
         return tiempo *1.0 * Math.pow(10,-9);
     }
 }
+/*
+ * _  _  _  _
+ * A 27 27 27
+ */
