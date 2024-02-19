@@ -22,9 +22,6 @@ public class Descifrar {
                 //Crea un string que contiene una posible contraseña
                 for(int k = 0; k < i; k++){
                     contra = contra + Constante.ALFABETO.charAt(posibleContra[k]%26);
-                    if(k == 0){
-                        contra = contra.toUpperCase();
-                    }
                 }
                 boolean esContra = false;
                 try{
