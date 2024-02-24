@@ -11,12 +11,22 @@ public class Paralelo implements Runnable {
     private static int min = 0;
     private static int max = 0;
 
+    /**
+     * Ejecución de los hilos
+     */
     @Override
     public void run() {
         System.out.println("Run " + Thread.currentThread().getName());
         descifrarParalelo(min, max);
     }
 
+    /**
+     * Función que usa hilos para descifrar la contrasennia, fijando un caracter
+     * dependiendo el hilo
+     * 
+     * @param min Longitud minima de la contrasennia
+     * @param max Longitud maxima de la contrasennia
+     */
     public static void descifrarParalelo(int min, int max) {
         min--;
         max--;
