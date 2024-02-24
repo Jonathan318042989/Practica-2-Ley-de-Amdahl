@@ -60,7 +60,6 @@ public class Paralelo implements Runnable {
         Long inicio = System.nanoTime();
         min = 6;
         max = 6;
-        int HILOS = 4;
         Paralelo p = new Paralelo();
         List<Thread> hilos = new ArrayList<>();
         for (int i = 0; i < Constante.ALFABETO.length(); i++) {
@@ -70,7 +69,7 @@ public class Paralelo implements Runnable {
             Thread t = new Thread(p, "" + Constante.ALFABETO.charAt(i));
             t.start();
             hilos.add(t);
-            if (hilos.size() == HILOS) {
+            if (hilos.size() == Constante.HILOS) {
                 for (Thread thread : hilos) {
                     thread.join();
                 }
@@ -83,10 +82,7 @@ public class Paralelo implements Runnable {
         }
         Long fin = System.nanoTime();
         Long total = fin - inicio;
-        System.out.println("TIEMPO TOTAL: " + nanoSegundoASegundo(total));
+        System.out.println("TIEMPO TOTAL: " + Main.nanoSegundoASegundo(total));
     }
 
-    public static double nanoSegundoASegundo(Long tiempo) {
-        return tiempo * 1.0 * Math.pow(10, -9);
-    }
 }
